@@ -1,0 +1,139 @@
+:root {
+    --primary: #0284C7;
+    --primary-light: #38BDF8;
+    --primary-dark: #0369A1;
+    --secondary: #6366F1;
+    --dark: #0F172A;
+    --darker: #020617;
+    --light-bg: #F1F5F9;
+    --sidebar-w: 260px;
+    --glass: rgba(255, 255, 255, 0.8);
+    --border: rgba(0, 0, 0, 0.06);
+}
+
+body { 
+    background-color: var(--light-bg); 
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.03) 0, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.03) 0, transparent 50%);
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .sidebar-heading {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Sidebar Styling */
+.sidebar { 
+    background: linear-gradient(180deg, #0F172A 0%, #020617 100%);
+    min-height: 100vh; 
+    border-right: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+
+.sidebar a { 
+    color: #94A3B8; 
+    text-decoration: none; 
+    padding: 12px 20px; 
+    margin: 4px 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar a i {
+    font-size: 1.1rem;
+}
+
+.sidebar a:hover { 
+    background-color: rgba(255, 255, 255, 0.05); 
+    color: white; 
+    transform: translateX(4px);
+}
+
+.sidebar a.active { 
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white; 
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+.sidebar-heading { 
+    color: rgba(148, 163, 184, 0.5) !important; 
+    font-size: 0.7rem; 
+    text-transform: uppercase; 
+    font-weight: 800;
+    letter-spacing: 0.15em; 
+    padding: 1.5rem 2rem 0.5rem;
+}
+
+/* Card Styling */
+.card { 
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+}
+
+/* Table Styling */
+.table {
+    margin-bottom: 0;
+}
+.table thead th {
+    background-color: #F8FAFC;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #64748B;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+}
+.table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(2, 132, 199, 0.3);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        transition: 0.3s;
+    }
+    .sidebar.show {
+        left: 0;
+    }
+}
